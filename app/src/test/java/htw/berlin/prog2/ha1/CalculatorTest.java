@@ -108,3 +108,19 @@ void testMultiplizierenVonZweiNegativenZahlen() {
 
     assertEquals(expected, actual);
 }
+@Test
+@DisplayName("soll beim benutzen von mehreren Operatoren, dass Zwischenergebnis anzeigen")
+void testAnzeigenVomZwischenergebnis() {
+    Calculator calc = new Calculator();
+    calc.pressDigitKey(5);
+    calc.pressBinaryOperationKey("+");
+    calc.pressDigitKey(5);
+    calc.pressBinaryOperationKey("+");
+
+
+    String expected = "10";
+    String actual = calc.readScreen();
+
+    assertEquals(expected, actual);
+}
+
